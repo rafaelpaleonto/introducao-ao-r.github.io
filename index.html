@@ -47,6 +47,7 @@
         h1 { font-family: 'Orbitron', monospace; font-weight: 900; font-size: 2.2rem; margin-bottom: 1rem; }
         h2 { font-family: 'Orbitron', monospace; color: #1a4b8c; font-weight: 700; font-size: 1.8rem; margin-bottom: 1rem; }
         h3 { font-family: 'Orbitron', monospace; color: #1a4b8c; font-weight: 500; font-size: 1.4rem; margin-bottom: 1rem; text-align: center; }
+        h5 { font-family: 'Poppins', sans-serif; color: #1a4b8c; font-weight: 600; font-size: 1.2rem; margin-bottom: 0.5rem; }
         p.lead { font-size: 1.1rem; font-weight: 300; margin-bottom: 0; }
         .logos-container { 
             display: flex; 
@@ -163,6 +164,16 @@
             display: inline-block;
             font-weight: 500;
         }
+        .data-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #1a4b8c;
+        }
+        .data-section h2 {
+            margin-top: 0;
+        }
         
         /* Footer melhorado */
         .footer-content {
@@ -219,36 +230,90 @@
         <p class="lead">Uma Semana de introdução ao R</p>
         <div class="confirmation-field">29 de Setembro à 03 de Outubro de 2025</div>
     </header>
-F
+
     <main class="main-container">
-       
-
-            <div class="content">
-                <section id="Bases de dados" class="content-section">
-                    <h2>Bases de dados</h2>
-                    <h5> Dados em RData</h5>
-                        <p> Link para download dos dados em RData do primeiro exemplo:
-                            <a href="https://drive.google.com/file/d/1zFnm8Pc562S7Ai-vj_ofGCph37vw7x0W/view?usp=sharing"> Download RData</a>
-                        </p>
-                </section>
-                
-                <h2> Base de dados do primeiro exercício</h2>
-                <p> Link para download dos dados em Rdata do primeiro exemplo: </p>
-                    <a href="https://drive.google.com/file/d/1bpIaoCReW9Ya2K_4-8TmLRTyB8JlxDcz/view?usp=sharing"> Download RData</a>
-
-                <h2> Base de dados do segundo exercício</h2>
-                 <p> Link para download dos dados em RData do segundo exemplo: </p>
-                    <a href="https://drive.google.com/file/d/1byINnAqReJBWbB9QAQOaPv3JPn-DFSGA/view?usp=sharing"> Download RData</a>
-
-                <h2> Base de dados do terceiro exercício</h2>
-                <p> Link para download dos dados em RData do terceiro exemplo: </p>
-                    <a href="https://drive.google.com/file/d/17i3zj6HqLxh-p0Le_R3MBrsr57jZmh9u/view?usp=sharing"> Download RData</a>
+        <div class="row">
+            <div class="sidebar">
+                <div class="menu-container">
+                    <h3 class="menu-title">Conteúdo do Curso</h3>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="#bases-dados" class="menu-link active">
+                                <span class="menu-number">1</span>
+                                <span class="menu-text">Bases de Dados</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#exercicio-1" class="menu-link">
+                                <span class="menu-number">2</span>
+                                <span class="menu-text">Exercício 1</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#exercicio-2" class="menu-link">
+                                <span class="menu-number">3</span>
+                                <span class="menu-text">Exercício 2</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#exercicio-3" class="menu-link">
+                                <span class="menu-number">4</span>
+                                <span class="menu-text">Exercício 3</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#bases-csv" class="menu-link">
+                                <span class="menu-number">5</span>
+                                <span class="menu-text">Bases CSV</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <section id="Bases de dados de leitura em CSV " class="content-section">
-                <h1>  Bases dos dados em CSV  </h1>
-            </section>
-            
+            <div class="content">
+                <section id="bases-dados" class="content-section">
+                    <h2>Bases de dados</h2>
+                    <h5>Dados em RData</h5>
+                    <p>Link para download dos dados em RData do primeiro exemplo:
+                        <a href="https://drive.google.com/file/d/1zFnm8Pc562S7Ai-vj_ofGCph37vw7x0W/view?usp=sharing">Download RData</a>
+                    </p>
+                </section>
+                
+                <section id="exercicio-1" class="data-section">
+                    <h2>Base de dados do primeiro exercício</h2>
+                    <p>Link para download dos dados em Rdata do primeiro exemplo:</p>
+                    <a href="https://drive.google.com/file/d/1bpIaoCReW9Ya2K_4-8TmLRTyB8JlxDcz/view?usp=sharing" class="btn btn-primary">Download RData</a>
+                </section>
+
+                <section id="exercicio-2" class="data-section">
+                    <h2>Base de dados do segundo exercício</h2>
+                    <p>Link para download dos dados em RData do segundo exemplo:</p>
+                    <a href="https://drive.google.com/file/d/1byINnAqReJBWbB9QAQOaPv3JPn-DFSGA/view?usp=sharing" class="btn btn-primary">Download RData</a>
+                </section>
+
+                <section id="exercicio-3" class="data-section">
+                    <h2>Base de dados do terceiro exercício</h2>
+                    <p>Link para download dos dados em RData do terceiro exemplo:</p>
+                    <a href="https://drive.google.com/file/d/17i3zj6HqLxh-p0Le_R3MBrsr57jZmh9u/view?usp=sharing" class="btn btn-primary">Download RData</a>
+                </section>
+
+                <section id="bases-csv" class="content-section">
+                    <h2>Bases de dados em CSV</h2>
+                </section>
+                <section id="exercicio-1" class="data-section">
+                    <h2>Primeiro Exemplo</h2>
+                    <p>Link para download dos dados em CSV do primeiro exemplo:</p>
+                    <a href="https://drive.google.com/file/d/1wyh7l0p1-nGU52qam35IpXRO7SvBQQzP/view?usp=sharing" class="btn btn-primary">Download CSV</a>
+                </section>
+
+                <section id="exercicio-2" class="data-section">
+                    <h2>Segundo Exemplo</h2>
+                    <p>Link para download dos dados em CSV do segundo exemplo:</p>
+                    <a href="https://drive.google.com/file/d/1Y1qNggkxZgqhrxqXY4iumakM-kFqpFht/view?usp=sharing" class="btn btn-primary">Download CSV</a>
+                </section>
+            </div>
+        </div>
     </main>
 
     <footer>
