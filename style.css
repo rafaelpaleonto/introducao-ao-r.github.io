@@ -16,7 +16,7 @@ body {
     flex-direction: column;
     background: #ffffff;
     color: var(--text-color);
-    padding-top: 80px; /* compensação da navbar fixa */
+    padding-top: 80px;
 }
 
 header {
@@ -43,7 +43,7 @@ h1 {
 }
 
 h2 {
-    font-family: 'Orbitron', monospace;
+    font-family: 'Nasalization One',system-ui;
     color: #117f05;
     font-weight: 700;
     font-size: 1.8rem;
@@ -73,7 +73,6 @@ p.lead {
     margin-bottom: 0;
 }
 
-/* Layout geral */
 main.main-container {
     max-width: 1200px;
     margin: 2rem auto;
@@ -104,7 +103,6 @@ main.main-container {
     min-width: 300px;
 }
 
-/* Menu lateral */
 .menu-container {
     background: #f0f4f8;
     padding: 1.5rem;
@@ -199,7 +197,6 @@ main.main-container {
     font-weight: 500;
 }
 
-/* === SEÇÃO DE REALIZAÇÃO === */
 .realizacao-nupes {
     background: #f9fafb;
     padding: 70px 20px;
@@ -251,7 +248,6 @@ main.main-container {
     transform: scale(1.05);
 }
 
-/* Ministrantes */
 .ministrantes {
     background: #eef3f7;
     padding: 25px 30px;
@@ -281,7 +277,6 @@ main.main-container {
     margin: 6px 0;
 }
 
-/* Link de notícia */
 .link-noticia {
     text-align: center;
 }
@@ -302,7 +297,6 @@ main.main-container {
     color: #fff;
 }
 
-/* Footer melhorado */
 .footer-content {
     display: flex;
     flex-direction: column;
@@ -333,7 +327,6 @@ main.main-container {
     margin: 0 auto;
 }
 
-/* Navbar personalizada */
 .navbar {
     background-color: #ffffff !important;
     border-bottom: 3px solid #005b96;
@@ -365,59 +358,87 @@ main.main-container {
     box-shadow: none;
 }
 
-/* Scroll suave */
 html {
     scroll-behavior: smooth;
 }
 
-/* === RESPONSIVIDADE === */
 @media (max-width: 768px) {
-    .row {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 1.5rem;
-    }
+    .row { flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; }
+    .organizadores { flex-direction: column; align-items: center; gap: 30px; }
+    .org-item img { width: 90px; }
+    .realizacao-nupes h2 { font-size: 1.8rem; }
+    .ministrantes ul { text-align: center; }
+    main.main-container { margin: 1rem auto; }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+    .footer-logo img { height: 50px; }
+    .footer-text { font-size: 0.8rem; }
+    .content-section { padding: 1.5rem; }
+}
 
-    .organizadores {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-    }
+.ide-rstudio {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-family: 'Poppins', sans-serif;
+}
 
-    .org-item img {
-        width: 90px;
-    }
+.ide-rstudio .ide-image {
+    text-align: center;
+}
 
-    .realizacao-nupes h2 {
-        font-size: 1.8rem;
-    }
+.ide-rstudio .r-logo {
+    max-width: 100px;
+    height: auto;
+}
 
-    .ministrantes ul {
-        text-align: center;
-    }
+.ide-rstudio h2 {
+    text-align: center;
+    color: #0047a0;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
 
-    main.main-container {
-        margin: 1rem auto;
-    }
+.ide-rstudio ol {
+    padding-left: 20px;
+    color: #222;
+    font-size: 1rem;
+}
 
-    h1 {
-        font-size: 1.8rem;
-    }
+.ide-rstudio ul {
+    padding-left: 20px;
+   
+}
 
-    h2 {
-        font-size: 1.5rem;
-    }
+.referencias {
+    background-color: #f5f5f5;
+    padding: 25px 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-family: 'Poppins', sans-serif;
+}
 
-    .footer-logo img {
-        height: 50px;
-    }
+.referencias h2 {
+    color: #0047a0;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
 
-    .footer-text {
-        font-size: 0.8rem;
-    }
+.referencias ul li {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
 
-    .content-section {
-        padding: 1.5rem;
-    }
+.referencias a {
+    color: #005b96;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.referencias a:hover {
+    color: #0077cc;
 }
