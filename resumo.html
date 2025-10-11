@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo dos Pacotes Tidyverse</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; margin: 2em; }
+        h1, h2, h3 { color: #333; }
+        code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 4px; font-family: monospace; }
+        pre { background-color: #f4f4f4; padding: 1em; border-radius: 5px; white-space: pre-wrap; word-wrap: break-word; }
+        .package-section { border-bottom: 2px solid #ccc; padding-bottom: 2em; margin-bottom: 2em; }
+        .citation { color: #007bff; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h1>Resumos de Pacotes do Tidyverse</h1>
+
+    <!-- Seção dplyr -->
+    <section class="package-section">
+        <h2>dplyr: Uma Gramática de Manipulação de Dados</h2>
+
+        <h3>Visão Geral</h3>
+        <p>
+            O <strong>dplyr</strong> é uma gramática de manipulação de dados que fornece um conjunto consistente de verbos para ajudar a resolver os desafios mais comuns de manipulação de dados <span class="citation"></span>. Os principais verbos são:
+        </p>
+        <ul>
+            <li><code>mutate()</code>: adiciona novas variáveis que são funções das variáveis existentes <span class="citation"></span>.</li>
+            <li><code>select()</code>: escolhe variáveis com base em seus nomes <span class="citation"></span>.</li>
+            <li><code>filter()</code>: seleciona casos com base em seus valores <span class="citation"></span>.</li>
+            <li><code>summarise()</code>: reduz múltiplos valores a um único resumo <span class="citation"></span>.</li>
+            <li><code>arrange()</code>: altera a ordenação das linhas <span class="citation"></span>.</li>
+        </ul>
+        <p>
+            Todos esses verbos se combinam naturalmente com <code>group_by()</code>, que permite realizar qualquer operação "por grupo" <span class="citation"></span>. O dplyr também oferece uma variedade de verbos para duas tabelas <span class="citation"></span>.
+        </p>
+
+        <h3>Backends</h3>
+        <p>
+            Além de data frames/tibbles, o dplyr torna o trabalho com outros backends computacionais acessível e eficiente <span class="citation"></span>. Alguns backends alternativos incluem:
+        </p>
+        <ul>
+            <li><strong>arrow</strong>: para conjuntos de dados maiores que a memória, inclusive em armazenamento em nuvem remota como AWS S3 <span class="citation"></span>.</li>
+            <li><strong>dtplyr</strong>: para grandes conjuntos de dados em memória, traduzindo seu código dplyr para código data.table de alto desempenho <span class="citation"></span>.</li>
+            <li><strong>dbplyr</strong>: para dados armazenados em um banco de dados relacional, traduzindo seu código dplyr para SQL <span class="citation"></span>.</li>
+            <li><strong>duckplyr</strong>: para usar duckdb em grandes conjuntos de dados em memória com zero cópias extras <span class="citation"></span>.</li>
+            <li><strong>duckdb</strong>: para grandes conjuntos de dados que ainda cabem no seu computador <span class="citation"></span>.</li>
+            <li><strong>sparklyr</strong>: para conjuntos de dados muito grandes armazenados no Apache Spark <span class="citation"></span>.</li>
+        </ul>
+
+        <h3>Instalação</h3>
+        <p>A maneira mais fácil de obter o dplyr é instalar o tidyverse completo:</p>
+        <pre><code>install.packages("tidyverse")</code></pre>
+        <p>Alternativamente, instale apenas o dplyr:</p>
+        <pre><code>install.packages("dplyr")</code></pre>
+        <p>Para obter a versão de desenvolvimento:</p>
+        <pre><code># install.packages("pak")
+pak::pak("tidyverse/dplyr") <span class="citation"></span></code></pre>
+
+        <h3>Uso</h3>
+        <p>Exemplos de uso com o conjunto de dados <code>starwars</code>:</p>
+        <pre><code>
+library(dplyr)
+
+# Filtrar
+starwars %>% filter(species == "Droid") <span class="citation"></span>
+
+# Selecionar
+starwars %>% select(name, ends_with("color")) <span class="citation"></span>
+
+# Mutate
+starwars %>% 
+  mutate(name, bmi = mass / ((height / 100) ^ 2)) %>%
+  select(name:mass, bmi) <span class="citation"></span>
+  
+# Arrange
+starwars %>% arrange(desc(mass)) <span class="citation"></span>
+
+# Group by e Summarise
+starwars %>%
+  group_by(species) %>%
+  summarise(
+    n = n(),
+    mass = mean(mass, na.rm = TRUE)
+  ) %>%
+  filter(
+    n > 1,
+    mass > 50
+  ) <span class="citation"></span>
+        </code></pre>
+    </section>
+
+    <!-- Seção R for Data Science -->
+    <section class="package-section">
+        <h2>R for Data Science (2e)</h2>
+        <p>
+            Este é o site da 2ª edição de "R for Data Science", um livro que ensina como fazer ciência de dados com R <span class="citation"></span>. Você aprenderá como importar seus dados para o R, colocá-los na estrutura mais útil, transformá-los e visualizá-los <span class="citation"></span>. O livro apresenta as melhores práticas para realizar essas tarefas e como gerenciar recursos cognitivos para facilitar descobertas ao manipular, visualizar e explorar dados <span class="citation"></span>.
+        </p>
+        <p>
+            O site é e sempre será gratuito, licenciado sob a CC BY-NC-ND 3.0 <span class="citation"></span>. Uma cópia física pode ser comprada na Amazon. Como forma de retribuição, os autores sugerem uma doação para a Kākāpō Recovery, uma organização de proteção a uma espécie de papagaio criticamente ameaçada da Nova Zelândia <span class="citation"></span>.
+        </p>
+        <p>
+            Traduções da 1ª edição estão disponíveis gratuitamente em espanhol, italiano, turco e português <span class="citation"></span>.
+        </p>
+    </section>
+
+    <!-- Seção readxl -->
+    <section class="package-section">
+        <h2>readxl: Ler Arquivos do Excel</h2>
+        
+        <h3>Visão Geral</h3>
+        <p>
+            O pacote <strong>readxl</strong> facilita a extração de dados do Excel para o R <span class="citation"></span>. Ele é projetado para trabalhar com dados tabulares e, em comparação com outros pacotes existentes, não possui dependências externas, facilitando a instalação e o uso em todos os sistemas operacionais <span class="citation"></span>. O readxl suporta tanto o formato legado <code>.xls</code> quanto o formato moderno <code>.xlsx</code> <span class="citation"></span>.
+        </p>
+
+        <h3>Instalação</h3>
+        <p>A maneira mais fácil é instalar o tidyverse:</p>
+        <pre><code>install.packages("tidyverse") <span class="citation"></span></code></pre>
+        <p>Nota: você ainda precisará carregar o readxl explicitamente (<code>library(readxl)</code>), pois ele não é um pacote principal do tidyverse <span class="citation"></span>.</p>
+        <p>Alternativamente, instale apenas o readxl:</p>
+        <pre><code>install.packages("readxl") <span class="citation"></span></code></pre>
+        
+        <h3>Uso</h3>
+        <p>A função <code>read_excel()</code> lê arquivos <code>.xls</code> e <code>.xlsx</code>, detectando o formato pela extensão <span class="citation"></span>.</p>
+        <pre><code>
+library(readxl)
+
+xlsx_example <- readxl_example("datasets.xlsx")
+read_excel(xlsx_example) <span class="citation"></span>
+        </code></pre>
+        <p>Você pode listar as planilhas com <code>excel_sheets()</code> e especificar uma planilha por nome ou número ao ler o arquivo <span class="citation"></span>.</p>
+        <pre><code>
+# Listar planilhas
+excel_sheets(xlsx_example) <span class="citation"></span>
+
+# Ler uma planilha específica pelo nome
+read_excel(xlsx_example, sheet = "chickwts") <span class="citation"></span>
+        </code></pre>
+        <p>É possível controlar quais células são lidas usando argumentos como <code>n_max</code>, <code>range</code>, <code>cell_rows()</code> e <code>cell_cols()</code> <span class="citation"></span>.</p>
+
+        <h3>Recursos</h3>
+        <ul>
+            <li>Não possui dependências externas como Java ou Perl <span class="citation"></span>.</li>
+            <li>Recodifica caracteres não-ASCII para UTF-8 <span class="citation"></span>.</li>
+            <li>Carrega data e hora em colunas POSIXct, lidando corretamente com as especificações de datas do Windows e Mac <span class="citation"></span>.</li>
+            <li>Retorna um <strong>tibble</strong> por padrão, que oferece uma impressão mais agradável <span class="citation"></span>.</li>
+        </ul>
+    </section>
+
+    <!-- Seção readr -->
+    <section class="package-section">
+        <h2>readr: Ler Dados de Texto Retangulares</h2>
+        
+        <h3>Visão Geral</h3>
+        <p>
+            O objetivo do <strong>readr</strong> é fornecer uma maneira rápida e amigável de ler dados retangulares de arquivos delimitados, como CSV e TSV <span class="citation"></span>. Ele é projetado para analisar muitos tipos de dados, fornecendo relatórios informativos quando ocorrem problemas <span class="citation"></span>. O melhor lugar para começar é o capítulo de importação de dados no livro "R for Data Science" <span class="citation"></span>.
+        </p>
+
+        <h3>Uso</h3>
+        <p>O readr é parte do tidyverse principal, então você pode carregá-lo com <code>library(tidyverse)</code> <span class="citation"></span>. Funções comuns incluem:</p>
+        <ul>
+            <li><code>read_csv()</code>: valores separados por vírgula <span class="citation"></span>.</li>
+            <li><code>read_tsv()</code>: valores separados por tabulação <span class="citation"></span>.</li>
+            <li><code>read_delim()</code>: arquivos delimitados em geral <span class="citation"></span>.</li>
+            <li><code>read_fwf()</code>: arquivos de largura fixa <span class="citation"></span>.</li>
+        </ul>
+        <p>
+            Na ausência de uma especificação de coluna, o readr tentará adivinhar os tipos de coluna a partir dos dados <span class="citation"></span>. É uma boa prática, no entanto, fornecer os tipos de coluna explicitamente, especialmente após a fase de exploração <span class="citation"></span>. Você pode usar a função <code>spec()</code> para obter a especificação de coluna adivinhada e, em seguida, ajustá-la conforme necessário <span class="citation"></span>.
+        </p>
+        
+        <h3>Edições</h3>
+        <p>
+            O readr obteve um novo motor de análise na versão 2.0.0 (lançada em julho de 2021), chamada de segunda edição, que usa <code>vroom::vroom()</code> por padrão <span class="citation"></span>. O motor de análise de versões anteriores é agora chamado de primeira edição. Embora a primeira edição ainda seja suportada, o objetivo é que a segunda edição seja uniformemente melhor, e a primeira será eventualmente descontinuada <span class="citation"></span>.
+        </p>
+
+        <h3>Alternativas</h3>
+        <ul>
+            <li><strong>Base R:</strong> As funções do readr são geralmente muito mais rápidas (até 10x-100x), usam um esquema de nomenclatura consistente para parâmetros e não convertem strings em fatores por padrão <span class="citation"></span>.</li>
+            <li><strong>data.table::fread():</strong> <code>fread()</code> pode ser mais rápido em dados com muitos valores numéricos. As funções do readr, por outro lado, seguem as convenções do tidyverse, como retornar um tibble e usar uma mini-linguagem comum para seleção de colunas <span class="citation"></span>.</li>
+        </ul>
+    </section>
+
+    <!-- Seção tidyr -->
+    <section class="package-section">
+        <h2>tidyr: Organizar Dados Desorganizados</h2>
+
+        <h3>Visão Geral</h3>
+        <p>
+            O objetivo do <strong>tidyr</strong> é ajudá-lo a criar <strong>dados organizados (tidy data)</strong> <span class="citation"></span>. Dados organizados são dados onde:
+        </p>
+        <ol>
+            <li>Cada variável é uma coluna; cada coluna é uma variável <span class="citation"></span>.</li>
+            <li>Cada observação é uma linha; cada linha é uma observação <span class="citation"></span>.</li>
+            <li>Cada valor é uma célula; cada célula é um único valor <span class="citation"></span>.</li>
+        </ol>
+        <p>
+            Seguir este padrão permite que você passe menos tempo lutando com as ferramentas e mais tempo trabalhando em sua análise <span class="citation"></span>.
+        </p>
+
+        <h3>Primeiros Passos</h3>
+        <p>As funções do tidyr se enquadram em cinco categorias principais:</p>
+        <ul>
+            <li><strong>Pivoting:</strong> Converte entre formatos longos e largos com <code>pivot_longer()</code> e <code>pivot_wider()</code> <span class="citation"></span>.</li>
+            <li><strong>Rectangling:</strong> Transforma listas profundamente aninhadas (como de JSON) em tibbles organizados <span class="citation"></span>.</li>
+            <li><strong>Nesting:</strong> Converte dados agrupados em um formato onde cada grupo se torna uma única linha contendo um data frame aninhado (<code>nest()</code>) e o processo inverso (<code>unnest()</code>) <span class="citation"></span>.</li>
+            <li><strong>Separação e combinação de colunas:</strong> Use funções como <code>separate_wider_delim()</code> para dividir uma coluna em várias, e <code>unite()</code> para combinar várias colunas em uma <span class="citation"></span>.</li>
+            <li><strong>Lidar com valores ausentes:</strong> Funções como <code>complete()</code>, <code>drop_na()</code>, <code>fill()</code> e <code>replace_na()</code> ajudam a gerenciar valores ausentes <span class="citation"></span>.</li>
+        </ul>
+        
+        <h3>Trabalhos Relacionados</h3>
+        <p>
+            O tidyr substitui os pacotes <code>reshape2</code> (2010-2014) e <code>reshape</code> (2005-2010) <span class="citation"></span>. O tidyr é projetado especificamente para organizar dados, e não para remodelagem geral ou agregação <span class="citation"></span>. O pacote <code>data.table</code> também fornece implementações de alto desempenho de <code>melt()</code> e <code>dcast()</code> <span class="citation"></span>.
+        </p>
+    </section>
+
+</body>
+</html>
