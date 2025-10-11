@@ -442,3 +442,18 @@ html {
 .referencias a:hover {
     color: #0077cc;
 }
+
+pre {
+    background-color: #f5f5f5;
+    padding: 19px;
+    border-radius: 8px;
+    overflow-x: auto;
+    text-align: justify; 
+}
+
+code {
+    font-family: 'Fira Code', monospace;
+    font-size: 28px;
+    color: #d6336c;
+    white-space: pre-wrap; 
+}
