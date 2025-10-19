@@ -47,95 +47,159 @@
 
     <!-- Conteúdo principal -->
     <main class="main-container">
-        <div class="content container mt-5" id="sobre">
+        <div class="container mt-5" id="sobre">
             <div class="row">
                 <!-- Coluna 1 -->
-                <section class="col-md-4 mb-3">
+                <section class="col-md-3 mb-3">
                     <div class="text-center mb-3">
                         <img src="logo_r.png" alt="Logo R" class="img-fluid" style="max-width:60px;">
                     </div>
                     <h2 class="text-center mb-3">Tipos de dados em R</h2>
                     <p class="text-justify">
-                        Em programação os tipos de dados são fundamentais, uma vez que como será 
-                        comportamento de uma variável depende do seu tipo, bem como as operações 
-                        associadas ao conjunto de variáveis presente em um algotritmo, ou no caso do R
-                        como os conjuntos de dados influenciam nas operações sobre os conjuntos de dados.
+                        Em programação, os tipos de dados são fundamentais, pois o comportamento de uma variável depende do seu tipo,
+                        bem como das operações associadas ao conjunto de variáveis em um algoritmo. No caso do R,
+                        os tipos de dados influenciam diretamente nas operações realizadas sobre conjuntos de dados.
                     </p>
                 </section>
 
                 <!-- Coluna 2 -->
-                <section class="col-md-4 mb-4">
-                    <h2 class="text-center mb-3">Tipos de dados em R</h2>
+                <section class="col-md-4 mb-3">
+                    <h2 class="text-center mb-3">Principais tipos</h2>
                     <ol class="text-justify">
-                        <li>
-                            <strong>Numeric:</strong> Números reais (com casas decimais), como 3.14, -0.001, 42.
-                        </li>
-                        <li>
-                            <strong>Double:</strong> Números de ponto flutuante de dupla precisão, como 2.718281828459045.
-                        </li>
-                        <li>
-                            <strong>Integer:</strong> Números inteiros, como 1L, -5L, 100L (o "L" indica que é um inteiro).
-                        </li>
-                        <li>
-                            <strong>Logical:</strong> Valores booleanos, TRUE ou FALSE.
-                        </li>
-                        <li>
-                            <strong>Caracter:</strong> Sequências de caracteres (strings), como "Olá", "R é ótimo!".
-                        </li>
+                        <li><strong>Numeric:</strong> Números reais (com casas decimais), como 3.14, -0.001, 42.</li>
+                        <li><strong>Double:</strong> Números de ponto flutuante de dupla precisão, como 2.718281828459045.</li>
+                        <li><strong>Integer:</strong> Números inteiros, como 1L, -5L, 100L (o "L" indica inteiro).</li>
+                        <li><strong>Logical:</strong> Valores booleanos, TRUE ou FALSE.</li>
+                        <li><strong>Character:</strong> Sequências de caracteres (strings), como "Olá", "R é ótimo!".</li>
                     </ol>
+                </section>
+
+                <!-- Coluna 3 -->
+                <section class="col-md-4 mb-3">
+                    
+                    <h2 class="text-center mb-3">Verificando tipos</h2>
+                    <p class="text-justify">
+                        Para verificar o tipo de dados de uma variável em R, você pode usar as funções:
+                    </p>
+                    <ul class="text-justify">
+                        <li><code>class()</code>: retorna a classe do objeto.</li>
+                        <li><code>typeof()</code>: mostra o tipo interno do objeto.</li>
+                        <li><code>mode()</code>: indica o modo de armazenamento.</li>
+                        <li><code>str()</code>: exibe a estrutura interna, incluindo tipo e valores.</li>
+                    </ul>
                 </section>
             </div>
 
-            <section class="ide-rstudio mt-6">
+            <!-- Exemplo de código -->
+            <section class="ide-rstudio mt-5">
                 <h2>Exemplo de Código em R</h2>
                 <p>Segue um exemplo simples de código em R:</p>
                 <pre><code class="r">
-                    ### Exemplos de variáveis do tipo numeric
-                    V1 <- 3.14
-                    V2 <- 7.7452
-                    V3 <- -89.5236
-                    ### Exemplos de variáveis do tipo double
-                    D1 <- 2.718281828459045
-                    D2 <- 3.14159265
-                    D3 <- -89.12345689622
-                    ### Exemplos de variáveis do tipo integer
-                    I1 <- 10L
-                    I2 <- -85L
-                    I3 <- 1223L
-                    ### Exemplos de variáveis do tipo booleano
-                    V <- TRUE
-                    F <- FALSE
-                    ### Exemplos de variáveis do tipo booleano
-                    C1 <- "OLÁ ESTOU USANDO UMA IDE"
-                    C2 <- "EU SOU O R"
-                    C3 <- "CONHEÇA O PROJETO CONEXÃO NUPES"
+### ============================================================
+### Exemplos de variáveis do tipo numeric
+### ============================================================
+V1 <- 3.14
+V2 <- 7.7452
+V3 <- -89.5236
+
+# Verificando os tipos
+typeof(V1)   # "double"
+class(V1)    # "numeric"
+mode(V1)     # "numeric"
+str(V1)      # num 3.14
+
+
+### ============================================================
+### Exemplos de variáveis do tipo double
+### ============================================================
+D1 <- 2.718281828459045
+D2 <- 3.14159265
+D3 <- -89.12345689622
+
+# Verificando os tipos
+typeof(D1)   # "double"
+class(D1)    # "numeric"
+mode(D1)     # "numeric"
+str(D1)      # num 2.718
+
+
+### ============================================================
+### Exemplos de variáveis do tipo integer
+### ============================================================
+I1 <- 10L
+I2 <- -85L
+I3 <- 1223L
+
+# Verificando os tipos
+typeof(I1)   # "integer"
+class(I1)    # "integer"
+mode(I1)     # "numeric"
+str(I1)      # int 10
+
+
+### ============================================================
+### Exemplos de variáveis do tipo lógico (booleano)
+### ============================================================
+V <- TRUE
+F <- FALSE
+
+# Verificando os tipos
+typeof(V)    # "logical"
+class(V)     # "logical"
+mode(V)      # "logical"
+str(V)       # logi TRUE
+
+
+### ============================================================
+### Exemplos de variáveis do tipo caractere (string)
+### ============================================================
+C1 <- "OLÁ ESTOU USANDO UMA IDE"
+C2 <- "EU SOU O R"
+C3 <- "CONHEÇA O PROJETO CONEXÃO NUPES"
+
+# Verificando os tipos
+typeof(C1)   # "character"
+class(C1)    # "character"
+mode(C1)     # "character"
+str(C1)      # chr "OLÁ ESTOU USANDO UMA IDE"
+
+
+### ============================================================
+### Outras verificações úteis
+### ============================================================
+
+# Saber se um objeto é de um tipo específico:
+is.numeric(V1)   # TRUE
+is.integer(I1)   # TRUE
+is.logical(V)    # TRUE
+is.character(C1) # TRUE
+
+# Ver estrutura de múltiplos objetos ao mesmo tempo:
+str(list(V1, I1, V, C1))
+
                 </code></pre>
             </section>
 
-            <!-- Seção de Referências -->
-            <!-- Seção de Referências (ABNT) -->
-<section class="referencias mt-5" id="referencias">
-    <div class="text-center mb-4">
-        <h3>Referências</h3>
-    </div>
-    <div class="container">
-        <ul class="list-unstyled mx-auto" style="max-width: 800px; text-align: justify; line-height: 1.6;">
-            <li style="margin-bottom: 10px;">
-                INTRO2R. <em>Data Types</em>. Disponível em: 
-                <a href="https://intro2r.com/data-types.html" target="_blank" rel="noopener noreferrer">
-                    https://intro2r.com/data-types.html
-                </a>. Acesso em: 10 out. 2024.
-            </li>
-            <li style="margin-bottom: 10px;">
-                W3SCHOOLS. <em>R Data Types - W3Schools</em>. Disponível em: 
-                <a href="https://www.w3schools.com/r/r_data_types.asp" target="_blank" rel="noopener noreferrer">
-                    https://www.w3schools.com/r/r_data_types.asp
-                </a>. Acesso em: 10 out. 2024.
-            </li>
-        </ul>
-    </div>
-</section>
-
+            <!-- Referências -->
+            <section class="referencias mt-5" id="referencias">
+                <div class="text-center mb-4">
+                    <h3>Referências</h3>
+                </div>
+                <ul class="list-unstyled mx-auto" style="max-width: 800px; text-align: justify; line-height: 1.6;">
+                    <li style="margin-bottom: 10px;">
+                        INTRO2R. <em>Data Types</em>. Disponível em:
+                        <a href="https://intro2r.com/data-types.html" target="_blank" rel="noopener noreferrer">
+                            https://intro2r.com/data-types.html
+                        </a>. Acesso em: 10 out. 2024.
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        W3SCHOOLS. <em>R Data Types - W3Schools</em>. Disponível em:
+                        <a href="https://www.w3schools.com/r/r_data_types.asp" target="_blank" rel="noopener noreferrer">
+                            https://www.w3schools.com/r/r_data_types.asp
+                        </a>. Acesso em: 10 out. 2024.
+                    </li>
+                </ul>
+            </section>
         </div>
     </main>
 
