@@ -95,89 +95,88 @@
                 <h2>Exemplo de Código em R</h2>
                 <p>Segue um exemplo simples de código em R:</p>
                 <pre><code class="r">
-### ============================================================
-### Exemplos de variáveis do tipo numeric
-### ============================================================
-V1 <- 3.14
-V2 <- 7.7452
-V3 <- -89.5236
+    ### ============================================================
+    ### Exemplos de variáveis do tipo numeric
+    ### ============================================================
+    V1 <- 3.14
+    V2 <- 7.7452
+    V3 <- -89.5236
 
-# Verificando os tipos
-typeof(V1)   # "double"
-class(V1)    # "numeric"
-mode(V1)     # "numeric"
-str(V1)      # num 3.14
-
-
-### ============================================================
-### Exemplos de variáveis do tipo double
-### ============================================================
-D1 <- 2.718281828459045
-D2 <- 3.14159265
-D3 <- -89.12345689622
-
-# Verificando os tipos
-typeof(D1)   # "double"
-class(D1)    # "numeric"
-mode(D1)     # "numeric"
-str(D1)      # num 2.718
+    # Verificando os tipos
+    typeof(V1)   # "double"
+    class(V1)    # "numeric"
+    mode(V1)     # "numeric"
+    str(V1)      # num 3.14
 
 
-### ============================================================
-### Exemplos de variáveis do tipo integer
-### ============================================================
-I1 <- 10L
-I2 <- -85L
-I3 <- 1223L
+    ### ============================================================
+    ### Exemplos de variáveis do tipo double
+    ### ============================================================
+    D1 <- 2.718281828459045
+    D2 <- 3.14159265
+    D3 <- -89.12345689622
 
-# Verificando os tipos
-typeof(I1)   # "integer"
-class(I1)    # "integer"
-mode(I1)     # "numeric"
-str(I1)      # int 10
-
-
-### ============================================================
-### Exemplos de variáveis do tipo lógico (booleano)
-### ============================================================
-V <- TRUE
-F <- FALSE
-
-# Verificando os tipos
-typeof(V)    # "logical"
-class(V)     # "logical"
-mode(V)      # "logical"
-str(V)       # logi TRUE
+    # Verificando os tipos
+    typeof(D1)   # "double"
+    class(D1)    # "numeric"
+    mode(D1)     # "numeric"
+    str(D1)      # num 2.718
 
 
-### ============================================================
-### Exemplos de variáveis do tipo caractere (string)
-### ============================================================
-C1 <- "OLÁ ESTOU USANDO UMA IDE"
-C2 <- "EU SOU O R"
-C3 <- "CONHEÇA O PROJETO CONEXÃO NUPES"
+    ### ============================================================
+    ### Exemplos de variáveis do tipo integer
+    ### ============================================================
+    I1 <- 10L
+    I2 <- -85L
+    I3 <- 1223L
 
-# Verificando os tipos
-typeof(C1)   # "character"
-class(C1)    # "character"
-mode(C1)     # "character"
-str(C1)      # chr "OLÁ ESTOU USANDO UMA IDE"
+    # Verificando os tipos
+    typeof(I1)   # "integer"
+    class(I1)    # "integer"
+    mode(I1)     # "numeric"
+    str(I1)      # int 10
 
 
-### ============================================================
-### Outras verificações úteis
-### ============================================================
+    ### ============================================================
+    ### Exemplos de variáveis do tipo lógico (booleano)
+    ### ============================================================
+    V <- TRUE
+    F <- FALSE
 
-# Saber se um objeto é de um tipo específico:
-is.numeric(V1)   # TRUE
-is.integer(I1)   # TRUE
-is.logical(V)    # TRUE
-is.character(C1) # TRUE
+    # Verificando os tipos
+    typeof(V)    # "logical"
+    class(V)     # "logical"
+    mode(V)      # "logical"
+    str(V)       # logi TRUE
 
-# Ver estrutura de múltiplos objetos ao mesmo tempo:
-str(list(V1, I1, V, C1))
 
-                </code></pre>
+    ### ============================================================
+    ### Exemplos de variáveis do tipo caractere (string)
+    ### ============================================================
+    C1 <- "OLÁ ESTOU USANDO UMA IDE"
+    C2 <- "EU SOU O R"
+    C3 <- "CONHEÇA O PROJETO CONEXÃO NUPES"
+
+    # Verificando os tipos
+    typeof(C1)   # "character"
+    class(C1)    # "character"
+    mode(C1)     # "character"
+    str(C1)      # chr "OLÁ ESTOU USANDO UMA IDE"
+
+
+    ### ============================================================
+    ### Outras verificações úteis
+    ### ============================================================
+
+    # Saber se um objeto é de um tipo específico:
+    is.numeric(V1)   # TRUE
+    is.integer(I1)   # TRUE
+    is.logical(V)    # TRUE
+    is.character(C1) # TRUE
+
+    # Ver estrutura de múltiplos objetos ao mesmo tempo:
+    str(list(V1, I1, V, C1))
+</code></pre>
             </section>
 
             <!-- Referências -->

@@ -87,6 +87,13 @@ str(vetor_caractere)     # chr [1:3] "R" "é" "poderoso!"
 
             <hr>
 
+            <section class="ide-rstudio mt-5">
+                <h4 style="text-align: center">Exemplo de Vetores no RStudio</h4>
+                <div class="ide-image">
+                    <img src="est1.png" alt="Logo RStudio" style="max-width:900px;">
+                </div>
+            </section>
+
             <!-- Matrizes -->
             <h3 class="mt-4">2. Matrizes</h3>
             <p class="text-justify">
@@ -113,6 +120,13 @@ matriz[2, 3]   # elemento da 2ª linha e 3ª coluna
 
             <hr>
 
+            <section class="ide-rstudio mt-5">
+                <h4 style="text-align: center">Exemplo de matrizes no RStudio</h4>
+                <div class="ide-image">
+                    <img src="est2.png" alt="Logo RStudio" style="max-width:900px;">
+                </div>
+            </section>
+
             <!-- Data Frame -->
             <h3 class="mt-4">3. Data Frames</h3>
             <p class="text-justify">
@@ -123,10 +137,10 @@ matriz[2, 3]   # elemento da 2ª linha e 3ª coluna
             <pre><code class="r">
 # Criando um data frame
 dados <- data.frame(
-  Nome = c("Ana", "Bruno", "Carla", "Daniel"),
-  Idade = c(23, 35, 29, 42),
-  Curso = c("Estatística", "Economia", "Sociologia", "Administração"),
-  Ativo = c(TRUE, TRUE, FALSE, TRUE)
+    Nome = c("Ana", "Bruno", "Carla", "Daniel"),
+    Idade = c(23, 35, 29, 42),
+    Curso = c("Estatística", "Economia", "Sociologia", "Administração"),
+    Ativo = c(TRUE, TRUE, FALSE, TRUE)
 )
 
 # Visualizando
@@ -142,6 +156,46 @@ dados[2, "Idade"]  # retorna a idade da segunda pessoa
 # Resumo estatístico das colunas numéricas
 summary(dados)
             </code></pre>
+
+            <hr>
+
+            <section class="ide-rstudio mt-5">
+                <h4 style="text-align: center">Exemplo de dataframes no RStudio</h4>
+                <div class="ide-image">
+                    <img src="est3.png" alt="Logo RStudio" style="max-width:900px;">
+                </div>
+            </section>
+            <hr>
+
+            <section class="curiosity-box">
+                <div class="curiosity-header">
+                    <span class="curiosity-icon">📊</span>
+                    <h3 class="curiosity-title">DataFrames e a função summary() no R</h3>
+                </div>
+                <div class="curiosity-content">
+                    <p>Os DataFrames são como "tabelas" no R - estruturas bidimensionais onde cada coluna pode ter um tipo de dado diferente, ao contrário dos vetores!</p>
+                    
+                    <p>A função <code>summary()</code> é uma ferramenta poderosa que fornece estatísticas descritivas para cada coluna do DataFrame automaticamente.</p>
+                    
+                    <div class="curiosity-tip">
+                        <strong>Exemplo prático:</strong><br>
+                        <code>summary(meu_dataframe)</code> mostra:<br>
+                        • Para números: mínimo, 1º quartil, mediana, média, 3º quartil, máximo<br>
+                        • Para texto: quantidade de elementos<br>
+                        • Para fatores: frequência de cada categoria
+                    </div>
+                </div>
+            </section>
+            <hr>
+
+            <section class="ide-rstudio mt-5">
+                <h4 style="text-align: center">Uso da função summary</h4>
+                <div class="ide-image">
+                    <img src="est4.png" alt="Logo RStudio" style="max-width:900px;">
+                </div>
+            </section>
+
+            <hr>
 
             <p class="text-justify">
                 Observe que o <code>data.frame</code> permite combinar diferentes tipos de dados (numéricos, lógicos e caracteres)
@@ -163,7 +217,7 @@ summary(dados)
         </div>
         <ul class="list-unstyled mx-auto" style="max-width: 800px; text-align: justify; line-height: 1.6;">
             <li style="margin-bottom: 10px;">
-               Estrutura de dados em  <em>R</em>. Disponível em:
+                Estrutura de dados em <em>R</em>. Disponível em:
                 <a href="https://www.lampada.uerj.br/arquivosdb/_book2/estruturasbasicas.html" target="_blank" rel="noopener noreferrer">
                     https://www.lampada.uerj.br/arquivosdb/_book2/estruturasbasicas.html
                 </a>. Acesso em: 19 out. 2024.
